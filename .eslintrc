@@ -1,0 +1,21 @@
+{
+  "parser": "babel-eslint",
+  "extends": "airbnb",
+  "plugins": [
+    "react",
+    "jsx-a11y",
+    "import"
+  ],
+  "env": {
+    "browser": true,
+    "node": true,
+    "shared-node-browser": true,
+    "commonjs": true,
+    "es6": true
+  },
+  "rules": {
+    "no-console": 0,
+    "react/jsx-filename-extension": 0,
+    "import/no-extraneous-dependencies": ["error", {"devDependencies": ["**/*.test.js", "**/*.spec.js"]}]
+  }
+}
