@@ -1,10 +1,10 @@
 language: node_js
 node_js:
-  - "7"
+- '7'
 script:
-  - yarn test
-  - yarn run flow
-  - yarn run build
+- yarn test
+- yarn run flow
+- yarn run build
 deploy:
   provider: npm
   email: adam@fransvilhelm.com
@@ -12,3 +12,7 @@ deploy:
     secure: pJBkM0QA3UgAORLNl3G/JX+R9bwSz0uSrKFI8WT/DC90zAvQOnNL9fCevBKi9k1bNvH7HcP49L1lVyakVXGhH0IvkjoqO8JXIfmaEvoaHjJj1FD1jp8fSyJPYM0AFUaK9uT5ZGeTX0DLD4J6EidAI6G5L2c0hNfgo40HAiNr3/CFA2l0fB3PqcPykX2UwIBmx5JoDvaOS7TfrXrkVH5JRIEqiw10ep/SaTT8GrEGaXhGC/Kk0ByG/7owMZ31aAN659/HHBI2EAKxYuHDowu+KttbCzYX2bZJ+MSDJpQYkKYjqEBqi1ou8fcbWf1a2Z+0o+mPpP7/I9qMP9nhMKfLobZR1tJgRUuWt4+HrkU4RzW8Yn8QkiiupDAVyAujIhiPd91NV7tOBJ7zNbxPLYHqhlirg9VCmwzttMkKtOoxjvvqb5Pp738tgGhKWMLDHi3omosRjX8u6pflLtzZ7rxPBW6WFx7ygmpc1AxB6cBwaScrXRwnipMNeHMnqre3138WR1WATMfvcllS1eNs7Wb6KGRoQRdQeqFcdIsT2gHgexY2F71HLopcuLOmjvonlOSiuANP9acZDj8eIX2kVcaI7eFdem10k2S2Bib2+D8pc4qlgWr9vrEhMPS79RHhkVGUsW+pQaTwvW0Szk2Sd7t4txVEJo6nmWos8o2cloShVs4=
   on:
     tags: true
+notifications:
+  email: false
+  slack:
+    secure: TxpmqtyKjPTAf00XBlChn4njpbZ7xPzw+873kO2+qyd3FRtFOWU70wXAt+selqgWpM+3cv5F/vcL7kouL76jWTGTo2lpiFuPutiE6I02HRp+fX3hbW7pF5iICyVYIatGVuhEpG2+SdEEidKwCd8FE9N/o36HoLe/iXkkSxCnmErYII/2uwZYZPyPLSEjceYi0oCzhIwH9lNM+Qf+A//KkPeBfsU/aTcxFX0CVEC6dNsE2Av6/ixUUJvJZYNGKJ+AcYX4n+pREHb55D9KqIyOvuhd55XWAxDhFF3eTAdwAfbtUALeaMrdpovqunQCwdVQ5vdCeP5XjOEK4XDQUS6GWVy+YQqzEuSJHIovdEOfGfo9yvwxoxL2CZMXRWVtUyNBkIWc79f3ioRXTGKEqXaj9/5IZ4D3z/AGUYUr6HL4y0zNIbx/uuLTBKtzeRFbF+xqe/m8+ocuOGZE76+Hb55j9AlMs74cHhoNmShfGVZOpaLh643v9s7g62fXz8Mb9f7XyPZeMHPlvR40unUo5I5lh4GKYLGrcJE3OGZyjRK6tC51uYtUnkIFvi4tCdFqp1Qv8U4EMf0MSj3xwtleEnClj3E+jqj75ZBqmdFs6kd/NkBqSbKSwW6iW515Yn86akjY9KzPhUQ7xWX9m84Ze6JWWfDLLm5iwEnHvC8hG+beUfA=
