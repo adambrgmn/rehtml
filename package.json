@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "description": "A component that translates a html string into React components/elements",
   "main": "index.js",
+  "files": ["lib"],
   "repository": "git@github.com:adambrgmn/rehtml.git",
   "author": "Adam Bergman <adam@fransvilhelm.com>",
   "license": "MIT",

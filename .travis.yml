@@ -1,0 +1,13 @@
+language: node_js
+node_js:
+  - "7"
+script:
+  - yarn test
+  - yarn run build
+deploy:
+  provider: npm
+  email: adam@fransvilhelm.com
+  api_key:
+    secure: pJBkM0QA3UgAORLNl3G/JX+R9bwSz0uSrKFI8WT/DC90zAvQOnNL9fCevBKi9k1bNvH7HcP49L1lVyakVXGhH0IvkjoqO8JXIfmaEvoaHjJj1FD1jp8fSyJPYM0AFUaK9uT5ZGeTX0DLD4J6EidAI6G5L2c0hNfgo40HAiNr3/CFA2l0fB3PqcPykX2UwIBmx5JoDvaOS7TfrXrkVH5JRIEqiw10ep/SaTT8GrEGaXhGC/Kk0ByG/7owMZ31aAN659/HHBI2EAKxYuHDowu+KttbCzYX2bZJ+MSDJpQYkKYjqEBqi1ou8fcbWf1a2Z+0o+mPpP7/I9qMP9nhMKfLobZR1tJgRUuWt4+HrkU4RzW8Yn8QkiiupDAVyAujIhiPd91NV7tOBJ7zNbxPLYHqhlirg9VCmwzttMkKtOoxjvvqb5Pp738tgGhKWMLDHi3omosRjX8u6pflLtzZ7rxPBW6WFx7ygmpc1AxB6cBwaScrXRwnipMNeHMnqre3138WR1WATMfvcllS1eNs7Wb6KGRoQRdQeqFcdIsT2gHgexY2F71HLopcuLOmjvonlOSiuANP9acZDj8eIX2kVcaI7eFdem10k2S2Bib2+D8pc4qlgWr9vrEhMPS79RHhkVGUsW+pQaTwvW0Szk2Sd7t4txVEJo6nmWos8o2cloShVs4=
+  on:
+    tags: true
