@@ -3,6 +3,7 @@ node_js:
   - "7"
 script:
   - yarn test
+  - yarn run flow
   - yarn run build
 deploy:
   provider: npm
