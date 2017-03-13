@@ -1,6 +1,6 @@
 {
   "name": "rehtml",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "A component that translates a html string into React components/elements",
   "main": "index.js",
   "files": ["lib"],
