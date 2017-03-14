@@ -7,7 +7,7 @@ const TARGET = process.env.npm_lifecycle_event || '';
 const config = {
   paths: {
     dist: joinWithRoot('dist'),
-    entry: joinWithRoot('src/rehtml.js'),
+    entry: joinWithRoot('src'),
   },
   filename: pkg.name,
   library: capFirst(pkg.name),

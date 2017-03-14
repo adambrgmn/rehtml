@@ -2,9 +2,9 @@ import test from 'tape';
 import React from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
 
-import toReact from './toReact';
+import convertToReact from '../convertToReact';
 
-test('Module: toReact()', (t) => {
+test('Module: convertToReact()', (t) => {
   {
     const mock = [
       {
@@ -26,7 +26,7 @@ test('Module: toReact()', (t) => {
     ];
 
     const should = 'Should return an array React elements';
-    const actual = renderToStaticMarkup(<div>{toReact(null, mock)}</div>);
+    const actual = renderToStaticMarkup(<div>{convertToReact(undefined)(mock)}</div>);
     const expected = '<div><p>First p</p><p>Second p</p></div>';
 
     t.equal(actual, expected, should);
@@ -45,7 +45,7 @@ test('Module: toReact()', (t) => {
     ];
 
     const should = 'Should return an array React elements';
-    const actual = renderToStaticMarkup(<div>{toReact(null, mock)}</div>);
+    const actual = renderToStaticMarkup(<div>{convertToReact(undefined)(mock)}</div>);
     const expected = '<div><p class="paragraph">First p</p></div>';
 
     t.equal(actual, expected, should);
@@ -66,7 +66,7 @@ test('Module: toReact()', (t) => {
     };
 
     const should = 'Should return an array React elements';
-    const actual = renderToStaticMarkup(<div>{toReact(mappings, mock)}</div>);
+    const actual = renderToStaticMarkup(<div>{convertToReact(mappings)(mock)}</div>);
     const expected = '<div><img src="image.jpg"/></div>';
 
     t.equal(actual, expected, should);
@@ -89,7 +89,7 @@ test('Module: toReact()', (t) => {
     };
 
     const should = 'Should return an array React elements and map the to corresponding mappings';
-    const actual = renderToStaticMarkup(<div>{toReact(mappings, mock)}</div>);
+    const actual = renderToStaticMarkup(<div>{convertToReact(mappings)(mock)}</div>);
     const expected = '<div><p class="mapped-p">First p</p></div>';
 
     t.equal(actual, expected, should);
@@ -122,7 +122,7 @@ test('Module: toReact()', (t) => {
     ];
 
     const should = 'Should return an array React elements and work on deeply nested objects';
-    const actual = renderToStaticMarkup(<div>{toReact(null, mock)}</div>);
+    const actual = renderToStaticMarkup(<div>{convertToReact(undefined)(mock)}</div>);
     const expected = '<div><p><a href="/"><em>Hello</em></a></p></div>';
 
     t.equal(actual, expected, should);
