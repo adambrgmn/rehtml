@@ -1,6 +1,6 @@
 {
   "name": "rehtml",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "A component that translates a html string into React components/elements",
   "main": "dist/rehtml.js",
   "module": "src/rehtml.js",
