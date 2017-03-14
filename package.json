@@ -1,6 +1,6 @@
 {
   "name": "rehtml",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Magically transform HTML to React components without danger",
   "main": "dist/rehtml.js",
   "module": "src/rehtml.js",
