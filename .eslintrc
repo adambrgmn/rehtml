@@ -22,6 +22,6 @@
     "react/jsx-filename-extension": 0,
     "react/sort-comp": 0,
 
-    "import/no-extraneous-dependencies": ["error", {"devDependencies": ["**/*.test.js", "**/*.spec.js"]}]
+    "import/no-extraneous-dependencies": ["error", {"devDependencies": ["**/*.test.js", "**/*.spec.js", "webpack.config.js"]}]
   }
 }
