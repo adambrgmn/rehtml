@@ -1,11 +1,16 @@
 {
   "name": "rehtml",
   "version": "0.2.0",
-  "description": "A component that translates a html string into React components/elements",
+  "description": "Magically transform HTML to React components without danger",
   "main": "dist/rehtml.js",
   "module": "src/rehtml.js",
   "files": [
     "dist"
+  ],
+  "keywords": [
+    "react",
+    "cheerio",
+    "htmlToReact"
   ],
   "repository": "git@github.com:adambrgmn/rehtml.git",
   "author": "Adam Bergman <adam@fransvilhelm.com>",
