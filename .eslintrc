@@ -14,7 +14,11 @@
     "es6": true
   },
   "globals": {
-    "ReactClass": true
+    "ReactClass": true,
+    "DomTree": true,
+    "DomTreeNode": true,
+    "Mappings": true,
+    "React$Element": true
   },
   "rules": {
     "no-console": 0,
