@@ -1,4 +1,4 @@
-# [![Rehtml](media/logo.svg)](https://github.com/adambrgmn/rehtml)
+# [![Rehtml](media/header.png)](https://github.com/adambrgmn/rehtml)
 
 > 🕴 Magically transform HTML to React components without danger
 
@@ -108,8 +108,3 @@ export default function Article({ html }) {
 Licensed under the MIT License, Copyright © 2016 Adam Bergman
 
 See [LICENSE](./LICENSE) for more information.
-
-
-## Acknowledgements
-
-This project builds on a long line of earlier work by clever folks all around the world. We'd like to thank Charlie Somerville, Nik Graf, Sunil Pai, Michael Chan, Andrey Popp, Jed Watson & Andrey Sitnik who contributed ideas, code or inspiration.
