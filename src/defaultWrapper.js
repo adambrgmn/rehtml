@@ -1,8 +1,9 @@
+/* eslint-disable react/require-default-props */
 // @flow
 import React from 'react';
 
 type Props = {
-  children: any,
+  children?: any,
 }
 
 export default function Wrapper({ children }: Props) {

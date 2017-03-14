@@ -1,6 +1,7 @@
 /* eslint-disable no-use-before-define */
 const path = require('path');
 const webpack = require('webpack');
+const merge = require('webpack-merge');
 const pkg = require('./package.json');
 
 const TARGET = process.env.npm_lifecycle_event || '';
@@ -15,13 +16,16 @@ const config = {
 
 process.env.BABEL_ENV = TARGET;
 
-module.exports = {
+const common = {
   entry: config.paths.entry,
   output: {
-    filename: `${config.filename}.js`,
     path: config.paths.dist,
     library: config.library,
     libraryTarget: 'umd',
+  },
+  resolve: {
+    extensions: ['.js', '.json'],
+    modules: [path.join(__dirname, 'src'), 'node_modules'],
   },
   externals: {
     react: {
@@ -34,12 +38,43 @@ module.exports = {
   module: {
     rules: [{ test: /\.jsx?$/, loader: 'babel-loader' }],
   },
-  plugins: [
-    new webpack.DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify('production'),
-    }),
-  ],
+  plugins: [],
 };
+
+if (TARGET === 'build') {
+  module.exports = merge(common, {
+    devtool: 'eval',
+    output: { filename: `${config.filename}.js` },
+  });
+}
+
+if (TARGET === 'build:min') {
+  module.exports = merge(common, {
+    devtool: 'source-map',
+    output: { filename: `${config.filename}.min.js` },
+    plugins: [
+      new webpack.DefinePlugin({
+        'process.env.NODE_ENV': JSON.stringify('production'),
+      }),
+      new webpack.optimize.UglifyJsPlugin({
+        beautify: false,
+        mangle: {
+          screw_ie8: true,
+          keep_fnames: true,
+        },
+        compress: {
+          screw_ie8: true,
+          warnings: false,
+        },
+        comments: false,
+      }),
+    ],
+  });
+}
+
+if (TARGET === '') {
+  module.exports = {};
+}
 
 
 // Helper functions
@@ -48,7 +83,6 @@ function joinWithRoot(...args) {
 }
 
 function capFirst(str) {
-  const splitted = str.split('');
-  splitted[0].toUpperCase();
+  const splitted = str.split('').map((c, i) => (i === 0 ? c.toUpperCase() : c));
   return splitted.join('');
 }

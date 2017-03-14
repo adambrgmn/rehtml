@@ -1,17 +1,22 @@
 {
   "name": "rehtml",
-  "version": "0.2.0",
-  "description": "A component that translates a html string into React components/elements",
+  "version": "0.3.0",
+  "description": "Magically transform HTML to React components without danger",
   "main": "dist/rehtml.js",
   "module": "src/rehtml.js",
   "files": [
     "dist"
+  ],
+  "keywords": [
+    "react",
+    "htmlToReact"
   ],
   "repository": "git@github.com:adambrgmn/rehtml.git",
   "author": "Adam Bergman <adam@fransvilhelm.com>",
   "license": "MIT",
   "scripts": {
     "build": "webpack",
+    "build:min": "webpack",
     "flow": "flow",
     "test": "tape src/**/**/*.spec.js -r babel-register | tap-spec --colors",
     "lint": "eslint 'src/**'"
@@ -40,7 +45,7 @@
     "webpack-merge": "^4.0.0"
   },
   "dependencies": {
-    "cheerio": "^0.22.0"
+    "htmlparser2": "^3.9.2"
   },
   "peerDependencies": {
     "react": "^15.4.2"
