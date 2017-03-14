@@ -2,7 +2,7 @@ import test from 'tape';
 import React from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
 
-import Rehtml from './rehtml';
+import Rehtml from './index';
 
 test('Core: <Rehtml>', (t) => {
   {

@@ -1,11 +1,11 @@
 import test from 'tape';
 
-import toObjectTree from './toObjectTree';
+import parseHtml from '../parseHtml';
 
-test('Module: toObjectTree()', (t) => {
+test('Module: parseHtml()', (t) => {
   {
     const should = 'Should turn an html string into an object tree representing the markup';
-    const actual = toObjectTree('<div>Hello world!</div>').get();
+    const actual = parseHtml('<div>Hello world!</div>');
     const expected = [
       {
         type: 'tag',
@@ -25,7 +25,7 @@ test('Module: toObjectTree()', (t) => {
 
   {
     const should = 'Should work independent of html structure';
-    const actual = toObjectTree('<p>First <em>paragraph</em></p><p class="text">Second paragraph</p>').get();
+    const actual = parseHtml('<p>First <em>paragraph</em></p><p class="text">Second paragraph</p>');
     const expected = [
       {
         type: 'tag',
@@ -46,6 +46,28 @@ test('Module: toObjectTree()', (t) => {
         name: 'p',
         attribs: { class: 'text' },
         children: [{ type: 'text', data: 'Second paragraph' }],
+      },
+    ];
+
+    t.deepEqual(actual, expected, should);
+  }
+
+  {
+    const should = 'Should work independent of html structure';
+    const actual = parseHtml('<p>Paragraph <img src="cat.jpg"></p>');
+    const expected = [
+      {
+        type: 'tag',
+        name: 'p',
+        attribs: {},
+        children: [
+          { type: 'text', data: 'Paragraph ' },
+          {
+            type: 'tag',
+            name: 'img',
+            attribs: { src: 'cat.jpg' },
+          },
+        ],
       },
     ];
 
