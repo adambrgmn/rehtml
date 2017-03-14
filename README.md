@@ -13,6 +13,13 @@ $ yarn add rehtml
 # or npm install rehtml --save
 ```
 
+or via a script tag:
+
+```html
+<script src="https://unpkg.com/rehtml"></script>
+<!-- This file exposes the variable Rehtml (note that it also requires React) -->
+```
+
 ## Usage
 
 ### Basic

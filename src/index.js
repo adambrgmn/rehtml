@@ -11,7 +11,11 @@ type Props = {
   Wrapper?: ReactClass<*>,
 };
 
-export default function Rehtml({ html, mappings, Wrapper }: Props) {
+export default function Rehtml({
+  html,
+  mappings = {},
+  Wrapper = DefaultWrapper,
+}: Props) {
   if (!Wrapper) return null;
 
   const parsedHtml = parseHtml(html);
