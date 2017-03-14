@@ -2,15 +2,16 @@
   "name": "rehtml",
   "version": "0.1.0",
   "description": "A component that translates a html string into React components/elements",
-  "main": "index.js",
+  "main": "dist/rehtml.js",
+  "module": "src/rehtml.js",
   "files": [
-    "lib"
+    "dist"
   ],
   "repository": "git@github.com:adambrgmn/rehtml.git",
   "author": "Adam Bergman <adam@fransvilhelm.com>",
   "license": "MIT",
   "scripts": {
-    "build": "babel src --out-dir lib",
+    "build": "webpack",
     "flow": "flow",
     "test": "tape src/**/**/*.spec.js -r babel-register | tap-spec --colors"
   },

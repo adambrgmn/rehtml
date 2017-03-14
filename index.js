@@ -1,1 +1,1 @@
-module.exports = require('./lib/rehtml').default;
+module.exports = require('./dist/rehtml');
