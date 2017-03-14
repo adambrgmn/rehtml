@@ -16,7 +16,7 @@ $ yarn add rehtml
 or via a script tag:
 
 ```html
-<script src="https://unpkg.com/rehtml"></script>
+<script src="https://unpkg.com/rehtml/dist/rehtml.min.js"></script>
 <!-- This file exposes the variable Rehtml (note that it also requires React) -->
 ```
 

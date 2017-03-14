@@ -17,11 +17,13 @@ const config = {
 process.env.BABEL_ENV = TARGET;
 
 const common = {
+  devtool: 'source-map',
   entry: config.paths.entry,
   output: {
     path: config.paths.dist,
     library: config.library,
     libraryTarget: 'umd',
+    sourceMapFilename: '[file].map',
   },
   resolve: {
     extensions: ['.js', '.json'],
