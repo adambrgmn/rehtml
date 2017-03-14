@@ -2,9 +2,10 @@ language: node_js
 node_js:
 - '7'
 script:
-- yarn test
-- yarn run flow
-- yarn run build
+  - yarn test
+  - yarn run flow
+  - yarn run lint
+  - yarn run build
 deploy:
   provider: npm
   email: adam@fransvilhelm.com

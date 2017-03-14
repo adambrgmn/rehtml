@@ -13,7 +13,8 @@
   "scripts": {
     "build": "webpack",
     "flow": "flow",
-    "test": "tape src/**/**/*.spec.js -r babel-register | tap-spec --colors"
+    "test": "tape src/**/**/*.spec.js -r babel-register | tap-spec --colors",
+    "lint": "eslint 'src/**'"
   },
   "devDependencies": {
     "babel-cli": "^6.22.2",
