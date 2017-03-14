@@ -1,12 +1,5 @@
 // @flow
-import cheerio from 'cheerio';
-
-const getDomTree = (html: string): DomTree => {
-  const $ = cheerio.load(`<div id="rehtml-temp-root">${html}</div>`);
-  const children = $('#rehtml-temp-root').children().toArray();
-
-  return children;
-};
+import { parseDOM } from 'htmlparser2';
 
 const extractData = (node: DomTreeNode): DomTreeNode => {
   if (node.type === 'text') {
@@ -27,6 +20,6 @@ const extractData = (node: DomTreeNode): DomTreeNode => {
 };
 
 export default function parseHtml(html: string): DomTree {
-  const domTree = getDomTree(html);
+  const domTree = parseDOM(html);
   return domTree.map(extractData);
 }

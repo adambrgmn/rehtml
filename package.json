@@ -9,7 +9,6 @@
   ],
   "keywords": [
     "react",
-    "cheerio",
     "htmlToReact"
   ],
   "repository": "git@github.com:adambrgmn/rehtml.git",
@@ -45,7 +44,7 @@
     "webpack-merge": "^4.0.0"
   },
   "dependencies": {
-    "cheerio": "^0.22.0"
+    "htmlparser2": "^3.9.2"
   },
   "peerDependencies": {
     "react": "^15.4.2"
