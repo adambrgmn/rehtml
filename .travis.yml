@@ -6,6 +6,7 @@ script:
   - yarn run flow
   - yarn run lint
   - yarn run build
+  - yarn run build:min
 deploy:
   provider: npm
   email: adam@fransvilhelm.com
