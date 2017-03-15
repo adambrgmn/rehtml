@@ -22,6 +22,8 @@ or via a script tag:
 
 ## Usage
 
+See [examples](examples/) for – examples.
+
 ### Basic
 ```javascript
 import Rehtml from 'rehtml';
