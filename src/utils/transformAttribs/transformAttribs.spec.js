@@ -1,6 +1,6 @@
 import test from 'tape';
 
-import transformAttribs from './transformAttribs';
+import transformAttribs from '../transformAttribs';
 
 test('Utils: transformAttribs()', (t) => {
   {
