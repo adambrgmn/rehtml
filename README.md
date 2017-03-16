@@ -26,6 +26,7 @@ See [examples](examples/) for – examples.
 
 ### Basic
 ```javascript
+import React from 'react';
 import Rehtml from 'rehtml';
 
 export default function Article({ html }) {
@@ -41,6 +42,7 @@ That's basically all you have to do make it work. It will parse your HTML string
 By default Rehtml will wrap all your HTML inside a div without any styles at all. But you can easily customize the wrapping object using prop `Wrapper`. The most important thing to remember is to make the component render `children`:
 
 ```javascript
+import React from 'react';
 import Rehtml from 'rehtml';
 
 function Wrapper({ children }) {
@@ -61,9 +63,10 @@ export default function Article({ html }) {
 By default Rehtml will transform your HTML into corresponing React elements. That means that `<p class="foo">Bar</p>` will be a React element like `<p className="foo">Bar</p>`. But you can choose to map the HTML elements to any React component you wish:
 
 ```javascript
+import React from 'react';
 import Rehtml from 'rehtml';
 
-function P({ children }) {
+function Paragraph({ children }) {
   return (
     <p style={{ color: 'red' }}>
       {children}
@@ -85,6 +88,7 @@ Just like the Wrapper it's important to note that your custom elements must rend
 This type of mapping works very will with "css-in-js"-modules like [`styled-components`](https://github.com/styled-components/styled-components):
 
 ```javascript
+import React from 'react';
 import Rehtml from 'rehtml';
 import styled from 'styled-components';
 
