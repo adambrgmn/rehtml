@@ -1,31 +1,25 @@
 {
-  "parser": "babel-eslint",
-  "extends": "airbnb",
-  "plugins": [
-    "react",
-    "jsx-a11y",
-    "import"
+  "parser": "@typescript-eslint/parser",
+  "extends": [
+    "react-app",
+    "plugin:@typescript-eslint/recommended",
+    "prettier",
+    "prettier/@typescript-eslint"
   ],
-  "env": {
-    "browser": true,
-    "node": true,
-    "shared-node-browser": true,
-    "commonjs": true,
-    "es6": true
-  },
-  "globals": {
-    "ReactClass": true,
-    "DomTree": true,
-    "DomTreeNode": true,
-    "Mappings": true,
-    "React$Element": true
+  "plugins": ["@typescript-eslint"],
+  "settings": {
+    "react": { "version": "detect" }
   },
   "rules": {
-    "no-console": 0,
-
-    "react/jsx-filename-extension": 0,
-    "react/sort-comp": 0,
-
-    "import/no-extraneous-dependencies": ["error", {"devDependencies": ["**/*.test.js", "**/*.spec.js", "webpack.config.js"]}]
-  }
+    "@typescript-eslint/no-explicit-any": "off",
+    "@typescript-eslint/explicit-function-return-type": "off"
+  },
+  "overrides": [
+    {
+      "files": ["**/*.{ts,tsx}"],
+      "rules": {
+        "no-undef": "off"
+      }
+    }
+  ]
 }
