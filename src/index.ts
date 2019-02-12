@@ -1,5 +1,1 @@
-function Rehtml(): null {
-  return null;
-}
-
-export { Rehtml };
+export { Rehtml } from './rehtml';
