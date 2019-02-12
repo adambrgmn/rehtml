@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should parse an html string into a DOMTree 1`] = `
+Array [
+  Object {
+    "children": Array [
+      Object {
+        "data": "Hello world",
+        "type": "text",
+      },
+    ],
+    "name": "p",
+    "props": Object {
+      "class": "foo",
+    },
+    "type": "tag",
+  },
+]
+`;
