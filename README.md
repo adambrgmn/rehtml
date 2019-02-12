@@ -2,9 +2,13 @@
 
 > 🕴 Magically transform HTML to React components without danger
 
-[![Build Status](https://travis-ci.org/adambrgmn/rehtml.svg?branch=master)](https://travis-ci.org/adambrgmn/rehtml) [![npm version](https://badge.fury.io/js/rehtml.svg)](https://badge.fury.io/js/rehtml) [![Dependency Status](https://dependencyci.com/github/adambrgmn/rehtml/badge)](https://dependencyci.com/github/adambrgmn/rehtml)
+[![Build Status](https://travis-ci.org/adambrgmn/rehtml.svg?branch=master)](https://travis-ci.org/adambrgmn/rehtml)
+[![npm version](https://badge.fury.io/js/rehtml.svg)](https://badge.fury.io/js/rehtml)
+[![Dependency Status](https://dependencyci.com/github/adambrgmn/rehtml/badge)](https://dependencyci.com/github/adambrgmn/rehtml)
 
-Have you found yourself using Reacts `dangerouslySetInnerHTML` and feeling a bit ashamed? Despair not – Rehtml can convert your HTML string into React components.
+Have you found yourself using Reacts `dangerouslySetInnerHTML` and feeling a bit
+ashamed? Despair not – Rehtml can convert your HTML string into React
+components.
 
 ## Installation
 
@@ -23,6 +27,7 @@ or via a script tag:
 ## Usage
 
 ### Basic
+
 ```javascript
 import Rehtml from 'rehtml';
 
@@ -31,22 +36,20 @@ export default function Article({ html }) {
 }
 ```
 
-That's basically all you have to do make it work. It will parse your HTML string and create corresponding React components.
-
+That's basically all you have to do make it work. It will parse your HTML string
+and create corresponding React components.
 
 ### Custom Wrapper
 
-By default Rehtml will wrap all your HTML inside a div without any styles at all. But you can easily customize the wrapping object using prop `Wrapper`. The most important thing to remember is to make the component render `children`:
+By default Rehtml will wrap all your HTML inside a div without any styles at
+all. But you can easily customize the wrapping object using prop `Wrapper`. The
+most important thing to remember is to make the component render `children`:
 
 ```javascript
 import Rehtml from 'rehtml';
 
 function Wrapper({ children }) {
-  return (
-    <article className="post">
-      {children}
-    </article>
-  );
+  return <article className="post">{children}</article>;
 }
 
 export default function Article({ html }) {
@@ -56,17 +59,16 @@ export default function Article({ html }) {
 
 ### Custom Elements
 
-By default Rehtml will transform your HTML into corresponing React elements. That means that `<p class="foo">Bar</p>` will be a React element like `<p className="foo">Bar</p>`. But you can choose to map the HTML elements to any React component you wish:
+By default Rehtml will transform your HTML into corresponing React elements.
+That means that `<p class="foo">Bar</p>` will be a React element like
+`<p className="foo">Bar</p>`. But you can choose to map the HTML elements to any
+React component you wish:
 
 ```javascript
 import Rehtml from 'rehtml';
 
 function P({ children }) {
-  return (
-    <p style={{ color: 'red' }}>
-      {children}
-    </p>
-  );
+  return <p style={{ color: 'red' }}>{children}</p>;
 }
 
 export default function Article({ html }) {
@@ -78,9 +80,11 @@ export default function Article({ html }) {
 }
 ```
 
-Just like the Wrapper it's important to note that your custom elements must render the `children` prop.
+Just like the Wrapper it's important to note that your custom elements must
+render the `children` prop.
 
-This type of mapping works very will with "css-in-js"-modules like [`styled-components`](https://github.com/styled-components/styled-components):
+This type of mapping works very will with "css-in-js"-modules like
+[`styled-components`](https://github.com/styled-components/styled-components):
 
 ```javascript
 import Rehtml from 'rehtml';
@@ -100,18 +104,16 @@ export default function Article({ html }) {
 }
 ```
 
-
 ## Props
 
-| Prop | Required | Default | Examples
-| --- | --- | --- | ---
-| html | `true` | (Not applicable) | `<p>Foo <em>bar</em></p>`
-| Wrapper | `false` | `<div>{children}</div>` | `<article>{children}</article>`
-| mappings | `false` | `{}` | `{ a: Link, em: Italic, strong: Bold }`
-
+| Prop     | Required | Default                 | Examples                                |
+| -------- | -------- | ----------------------- | --------------------------------------- |
+| html     | `true`   | (Not applicable)        | `<p>Foo <em>bar</em></p>`               |
+| Wrapper  | `false`  | `<div>{children}</div>` | `<article>{children}</article>`         |
+| mappings | `false`  | `{}`                    | `{ a: Link, em: Italic, strong: Bold }` |
 
 ## License
 
-Licensed under the MIT License, Copyright © 2016 Adam Bergman
+Licensed under the MIT License
 
 See [LICENSE](./LICENSE) for more information.
